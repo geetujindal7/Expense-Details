@@ -36,3 +36,134 @@
     transform: rotate(360deg);
   }
 }
+
+.AddExpense{
+  width: 70vw;
+  height: 100px;
+  background-color: white;
+  border-radius: 5px;
+  border: 30px;
+  margin: auto;
+  margin-top: 70px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.AddExpenseButton{
+  width: 20vw;
+  position: relative;
+  top:25px;
+  height: 50px;
+  background-color: paleturquoise;
+  border-radius: 5px;
+  border: 30px;
+  min-width: 20vw;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.AddExpenseButtonLabel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top:12px;
+  font-size: 15px;
+}
+
+.AddExpenseCard{
+  width: 70vw;
+  height: 300px;
+  background-color: white;
+  border-radius: 30px;
+  border: 30px;
+  margin: auto;
+  margin-top: 70px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.FormData
+{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.labelform{
+  margin-top: 30px;
+}
+
+.inputtype{
+  width: 300px;
+  margin-left: 30px;
+  height: 30px;
+  color: white;
+  background-color: #282c34;
+}
+
+.label{
+  font-size: 20px;
+}
+
+.expenseItems{
+  background-color: #36454F;
+  width: 70vw;
+  height: 700px;
+  border-radius: 30px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+
+.filterbyyear{
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#year{
+  width: 70px;
+  height: 20px;
+  margin-top: 20px;
+}
+
+.eachitem{
+  background-color: white;
+  width: 65vw;
+  height: 100px;
+  margin: 40px;
+  border-radius: 10px;
+}
+
+.eachitemcontainer{
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dateContainer{
+  border-color: black;
+  width: 8vw;
+  background-color: black;
+  height: 70px;
+  margin-right: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: white;
+}
+
+.datetitlecontainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_each_item
+{
+  height: 500px;
+  max-height: 500px;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.datadateentered{
+ padding: 5px;
+}

@@ -1,24 +1,64 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import ExpenseItem from './Components/ExpenseItem';
+import NewExpense from './Components/NewExpense';
 
 function App() {
+
+
+  const obj = [{
+    id:1,
+    expense: 'Petrol',
+    date: new Date(2020,7,14),
+    amount: 260.5
+  },
+  
+  {
+    id:1,
+    expense: 'Petrol',
+    date: new Date(2020,7,14),
+    amount: 260.5
+  },
+  {
+    id:1,
+    expense: 'Petrol',
+    date: new Date(2022,7,14),
+    amount: 260.5
+  },
+  {
+    id:1,
+    expense: 'Petrol',
+    date: new Date(2020,7,14),
+    amount: 260.5
+  },
+  ];
+
+  const [objects, setObj] = useState(obj)
+  const [filteredData, setfiltered] = useState([])
+
+
+
+  const handleObjData = (id) => {
+    setObj((e) => {
+      return [id, ...e]
+    })
+    console.log(objects)
+  }
+  
+  // const handleYearDate = (id) => {
+  //     console.log(id)     
+  //     //console.log(objects.filter((e) =>  e.date.getFullYear() !== id))
+  //     const obb = objects.filter((e) =>  e.date.getFullYear() == id)
+  //    setfiltered(obb)
+  // }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <NewExpense handleObjData = {handleObjData} />
+    <ExpenseItem obj={objects} />
+</>
   );
 }
 
