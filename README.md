@@ -7,4 +7,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 
-You can run the app: https://expense-details.netlify.app/
+Check the live project: https://expense-details.netlify.app/
