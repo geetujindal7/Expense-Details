@@ -4,7 +4,7 @@ import Chart from './Chart'
 import EachExpenseItem from './EachExpenseItem'
 
 function ExpenseItem(props) {
-    const [year, setYear] = useState(2022)
+    const [year, setYear] = useState('2022')
 
     const handleYear = (e) => {
         setYear(e.target.value)
@@ -12,7 +12,8 @@ function ExpenseItem(props) {
 
     }
 
-    const filteredex = props.obj.filter((e) => new Date(e.date).getFullYear() == year)
+    // eslint-disable-next-line eqeqeq
+    const filteredex = props.obj.filter((e) =>  new Date(e.date).getFullYear() == year)
     console.log(filteredex)
 
     return (

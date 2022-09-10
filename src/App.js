@@ -17,22 +17,22 @@ const getlocaldata = () => {
 
 function App() {
 
-  const obj = [{
-    id:1,
-    expense: 'Petrol',
-    date: new Date(2020,7,14),
-    amount: 260.5
-  },
+  // const obj = [{
+  //   id:1,
+  //   expense: 'Petrol',
+  //   date: new Date(2020,7,14),
+  //   amount: 260.5
+  // },
   
-  {
-    id:1,
-    expense: 'AC',
-    date: new Date(2022,7,14),
-    amount: 260.5
-  },
+  // {
+  //   id:1,
+  //   expense: 'AC',
+  //   date: new Date(2022,7,14),
+  //   amount: 260.5
+  // },
   
  
-  ];
+  // ];
 
   const [objects, setObj] = useState(getlocaldata())
 
