@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
+
 
 function ExpenseForm(props) {
 
     const [formData, setform] = useState({
         title: '',
         amount: '',
-        date: ''
+        date: new Date()
     })
 
     const handleAmount = (e) => {
@@ -34,28 +36,42 @@ function ExpenseForm(props) {
         })
     }
 
+
+  
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = {
-            amount : formData.amount,
-            expense: formData.title,
-            date: new Date(formData.date)
-        }
-        console.log(data)
-        setform((prev) => {
-            return {
-                ...prev,
-                date : '',
-                amount: '',
-                title: ''
+        console.log(typeof(formData.date))
+        if(formData.amount !== '' &&  formData.title !== '' && formData.date !== '')
+        { 
+            const data = {
+                amount : formData.amount,
+                expense: formData.title,
+                date: new Date(formData.date)
             }
-        })
+    
+            console.log(data)
+            setform((prev) => {
+                return {
+                    ...prev,
+                    date : '',
+                    amount: '',
+                    title: ''
+                }
+            })
+    
+            props.handleObjData(data)
+        }
+        else{
+            alert("Please enter all the details")
+        }
 
-        props.handleObjData(data, )
+        
     }
     return (
         <div className='AddExpenseCard'>
-            <form onSubmit={handleSubmit} className='FormData'>
+        <div>
+        <form  className='FormData'>
                 <div className='labelform'>
                     <label className='label'>Title</label>
                     <input className='inputtype' type="text" value={formData.title} onChange={handleTitle}></input>
@@ -66,10 +82,18 @@ function ExpenseForm(props) {
                 </div>
                 <div className='labelform'>
                     <label className='label'>Date</label>
-                    <input className='inputtype' max="2022-12-30" min="2020-01-01" type="date" value={formData.date} onChange={handleDate}></input>
+                    <input className='inputtype dateinput' max="2022-12-30" min="2020-01-01" type="date" value={formData.date} onChange={handleDate}></input>
                 </div>
-                <button type="submit">Submit</button>
-            </form>
+               
+            </form> 
+        </div>
+           
+            <div>
+            <div className='buttondv'>
+            <button className='buttonSubmit' onClick={handleSubmit} type="submit">Add Expense</button>
+            </div>
+            </div>
+          
         </div>
     )
 }

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import '../App.css'
+import Chart from './Chart'
 import EachExpenseItem from './EachExpenseItem'
 
 function ExpenseItem(props) {
-    const [year, setYear] = useState(2021)
+    const [year, setYear] = useState(2022)
 
     const handleYear = (e) => {
         setYear(e.target.value)
@@ -11,7 +12,8 @@ function ExpenseItem(props) {
 
     }
 
-    const filteredex = props.obj.filter((e) => e.date.getFullYear() == year)
+    const filteredex = props.obj.filter((e) => new Date(e.date).getFullYear() == year)
+    console.log(filteredex)
 
     return (
         <>
@@ -25,6 +27,7 @@ function ExpenseItem(props) {
                     </select>
                 </div>
                 <div className='container_each_item'>
+                <Chart items = {filteredex}/>
                 <EachExpenseItem obj={filteredex}/>
                 </div>
                
